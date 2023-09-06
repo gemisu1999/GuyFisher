@@ -198,12 +198,12 @@ async def on_message(msg):
             d=g5
         await msg.channel.send(d)
         
-    if '밥 먹었어?' in msg.content:
+    if '밥 먹었' in msg.content:
         a = random.randrange(1,6)
         if a==1:
             d=h1
-        elif a==h:
-            d=c2
+        elif a==2:
+            d=h2
         elif a==3:
             d=h3
         elif a==4:
