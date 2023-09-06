@@ -134,7 +134,35 @@ async def on_message(msg):
             d=f5
         await msg.channel.send(d)
 
+    if '힘들다' in msg.content:
+        a = random.randrange(1,5)
+        if a==1:
+            d=f1
+        elif a==2:
+            d=f2
+        elif a==3:
+            d=f3
+        elif a==4:
+            d=f4
+        else:
+            d=f5
+        await msg.channel.send(d)
+
     if '안 할' in msg.content:
+        a = random.randrange(1,5)
+        if a==1:
+            d=g1
+        elif a==2:
+            d=g2
+        elif a==3:
+            d=g3
+        elif a==4:
+            d=g4
+        else:
+            d=g5
+        await msg.channel.send(d)
+        
+    if '안할' in msg.content:
         a = random.randrange(1,5)
         if a==1:
             d=g1
