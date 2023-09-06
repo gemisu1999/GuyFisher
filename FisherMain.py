@@ -67,7 +67,7 @@ async def about(ctx):
 
 @bot.event
 async def on_message(msg):    
-    if msg.content == '글 읽어줘':
+    if '글 읽어' in msg.content:
         a = random.randrange(1,5)
         if a==1:
             d=a1
@@ -81,7 +81,7 @@ async def on_message(msg):
             d=a5
         await msg.channel.send(d)
 
-    if msg.content == '사랑해':
+    if '사랑해' in msg.content:
         a = random.randrange(1,4)
         if a==1:
             d=b1
@@ -110,7 +110,7 @@ async def on_message(msg):
             d=c6
         await msg.channel.send(d)
 
-    if msg.content == '바보':
+    if '바보' in msg.content:
         a = random.randrange(1,3)
         if a==1:
             d=e1
@@ -120,7 +120,7 @@ async def on_message(msg):
             d=e3
         await msg.channel.send(d)
 
-    if msg.content == '힘들어':
+    if '힘들어' in msg.content:
         a = random.randrange(1,5)
         if a==1:
             d=f1
@@ -134,7 +134,7 @@ async def on_message(msg):
             d=f5
         await msg.channel.send(d)
 
-    if msg.content == '안 할래':
+    if '안 할' in msg.content:
         a = random.randrange(1,5)
         if a==1:
             d=g1
