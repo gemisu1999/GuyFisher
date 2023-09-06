@@ -162,7 +162,7 @@ async def on_message(msg):
             d=g5
         await msg.channel.send(d)
         
-    if '안할' in msg.content and and ('힘들어','힘들다') not in msg.content:
+    if '안할' in msg.content and ('힘들어','힘들다') not in msg.content:
         a = random.randrange(1,5)
         if a==1:
             d=g1
