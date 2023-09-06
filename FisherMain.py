@@ -61,6 +61,15 @@ h4="(피곤한 얼굴로 고개만을 저었다.)"
 h5="외식하기로 해서 기다리고 있어요. 나이가 드니까 밥을 챙겨먹는 게 어렵네요."
 h6=""
 
+#주물주물
+i1="으,학! 뭐 하는 거예요! (많이 당황한 눈치로 바라본다.)"
+i2="*(사색이 된 채 허공을 응시하고 있다.)*"
+i3="끄으응...하, 하지마요. 정말로..."
+i4="마,마,마,만지지 마요! *(격렬하게 반항한다.)*"
+i5="이러면 안, 안 돼요... *(얼굴이 새빨갛다.)*"
+i6="(작은 목소리로) ...파, 파비오 한테 이를 거예요! 비겁하다고 해도 소용 없어요!"
+i7=""
+
 @bot.event
 async def on_ready():             # 봇 실행 시 실행되는 함수
     print(f'{bot.user} 에 로그인하였습니다!')
@@ -210,6 +219,24 @@ async def on_message(msg):
             d=h5
         else:
             d=h6
+        await msg.channel.send(d)
+
+    if '주물주물' in msg.content:
+        a = random.randrange(1,7)
+        if a==1:
+            d=i1
+        elif a==2:
+            d=i2
+        elif a==3:
+            d=i3
+        elif a==4:
+            d=i4
+        elif a==5:
+            d=i5
+        elif a==6:
+            d=i6
+        else:
+            d=i7
         await msg.channel.send(d)
 
 
