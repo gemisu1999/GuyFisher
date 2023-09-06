@@ -81,7 +81,7 @@ async def on_message(msg):
             d=a5
         await msg.channel.send(d)
 
-    if '사랑해' in msg.content:
+    if '사랑해' in msg.content and '파비오' not in msg.content:
         a = random.randrange(1,4)
         if a==1:
             d=b1
