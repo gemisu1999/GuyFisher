@@ -66,11 +66,6 @@ async def on_ready():             # 봇 실행 시 실행되는 함수
     print(f'{bot.user} 에 로그인하였습니다!')
     await bot.change_presence(status=discord.Status.online, activity=discord.Game('운동'))
 
-@bot.event
-async def on_message(msg):
-    if msg.author.bot: return None
-    await bot.process_commands(msg)
-
 @bot.command()
 async def about(ctx):    
     embed = discord.Embed(title='명령어', 
@@ -78,7 +73,10 @@ async def about(ctx):
     await ctx.channel.send(embed=embed)
 
 @bot.event
-async def on_message(msg):    
+async def on_message(msg): 
+    if msg.author.bot:
+        return
+    
     if '글 읽어' in msg.content:
         a = random.randrange(1,10)
         if a==1:
