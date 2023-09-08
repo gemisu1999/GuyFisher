@@ -24,7 +24,12 @@ a10=""
 b1="…고마워요, 정말로."
 b2="내가… 그에게 정말 듣고싶은 말이네요."
 b3="*(그저 웃음을 지을 뿐 답을 하지는 않았다.)*"
-b4=""
+b4="그 사랑을 받을 만큼 전 좋은 사람이 아닌걸요... 그래도, 고마워요."
+b5="그, ... 한 번만 더 말해주세요."
+b6="... 그건 내 최고의 방어이자 그의 무기죠."
+b7="...나도 그렇다고, 그에게 말하고 싶어요."
+b8="나도요. 고마워요, 정말."
+b9=""
 
 #파비오
 c1="…그를 알아요?"
@@ -111,15 +116,25 @@ async def on_message(msg):
         await msg.channel.send(d)
 
     if '사랑해' in msg.content:
-        a = random.randrange(1,4)
+        a = random.randrange(1,9)
         if a==1:
             d=b1
         elif a==2:
             d=b2
         elif a==3:
             d=b3
-        else:
+        elif a==4:
             d=b4
+        elif a==5:
+            d=b5
+        elif a==6:
+            d=b6
+        elif a==7:
+            d=b7
+        elif a==8:
+            d=b8
+        else:
+            d=b9
         await msg.channel.send(d)
     
     
