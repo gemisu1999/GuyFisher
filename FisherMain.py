@@ -75,10 +75,21 @@ i5="이러면 안, 안 돼요... *(얼굴이 새빨갛다.)*"
 i6="(작은 목소리로) ...파, 파비오 한테 이를 거예요! 비겁하다고 해도 소용 없어요!"
 i7=""
 
+#사라
+j1="그 아이에겐… 언제나 죄책감을 가지고 있어요. 내가 더 잘 했다면 보호해줄 수 있었을 텐데."
+j2="사라. 사라 자칼로네. 파비오가 사랑하는 아이예요. 그의 가족이죠."
+j3="사라는... 착해요. 밥도 잘 먹고 씩씩하죠. 요즘은 잠투정을 조금 부리지만요, 하하."
+j4="어른이 될 때까지 아이를 볼 수 있어서 기뻐요, 정말로. 하지만... 미래가 걱정되기도 하네요. 지금처럼 아이 눈을 제대로 맞추고 지낼 수 있을지..."
+j5="난 진심으로 사라를 사랑으로 키우고 있어요. 아이가 행복하길 바라죠."
+j6="... 우리 애 똑똑하다니까요? 알파벳을 적는데 어찌나 깔끔하게 쓰던지. 자라서 어떤 일을 할지 너무 기대가 되지 않아요? 하하!"
+j7="사랑한다, 사라. 아가. 삼촌은 널 정말로 사랑해."
+j8="...미안해, 정말 미안해. 그래도 너를 사랑한단다, 사라."
+j9=""
+
 @bot.event
 async def on_ready():             # 봇 실행 시 실행되는 함수
     print(f'{bot.user} 에 로그인하였습니다!')
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game('운동'))
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game('사라와 독서'))
 
 @bot.command()
 async def about(ctx):    
@@ -252,6 +263,28 @@ async def on_message(msg):
             d=i6
         else:
             d=i7
+        await msg.channel.send(d)
+
+    if '사라' in msg.content:
+        a = random.randrange(1,9)
+        if a==1:
+            d=j1
+        elif a==2:
+            d=j2
+        elif a==3:
+            d=j3
+        elif a==4:
+            d=j4
+        elif a==5:
+            d=j5
+        elif a==6:
+            d=j6
+        elif a==7:
+            d=j7
+        elif a==8:
+            d=j8
+        else:
+            d=j9
         await msg.channel.send(d)
 
 
