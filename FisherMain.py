@@ -96,6 +96,16 @@ k6="...그날로 돌아가면 절대로 마시지 않을 거예요."
 k7="가끔 상상하곤 해요. 욕조에서 피를 하루종일 흘려도 안 죽을까... 하하, 너무 어두운 얘기죠. 미안합니다."
 k8=""
 
+#좋은 아침
+l1="좋은 아침, 오늘도 힘내요."
+l2="날이 좋네요.  낮에는 사라를 데리고 나가봐야겠어요."
+l3="Good morning, my friend."
+l4="아아, 파비오 한테 인사한다고 해놓고 또 자버렸어요! *(굉장히 슬픈 목소리다.)*"
+l5="*(약에 취했는지 고개를 푹 숙인 채 손만 들어 흔든다.)*"
+l6="오늘이 어떤 날이 되더라도 항상 즐거웠으면 좋겠어요."
+l7="아침 인사를 받을 때마다 얼마나 기쁜지 모를 거예요, 당신은. 고마워요."
+l8=""
+
 @bot.event
 async def on_ready():             # 봇 실행 시 실행되는 함수
     print(f'{bot.user} 에 로그인하였습니다!')
@@ -315,6 +325,26 @@ async def on_message(msg):
             d=k7
         else:
             d=k8
+        await msg.channel.send(d)
+
+    if '좋은 아침' in msg.content:
+        a = random.randrange(1,8)
+        if a==1:
+            d=l1
+        elif a==2:
+            d=l2
+        elif a==3:
+            d=l3
+        elif a==4:
+            d=l4
+        elif a==5:
+            d=l5
+        elif a==6:
+            d=l6
+        elif a==7:
+            d=l7
+        else:
+            d=l8
         await msg.channel.send(d)
 
 
